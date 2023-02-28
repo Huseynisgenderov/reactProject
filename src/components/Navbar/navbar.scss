@@ -1,0 +1,96 @@
+.navbar {
+  color: #f2f3ee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  .row {
+    display: flex;
+    .menuBar {
+      padding-top: 10px;
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+      position: relative;
+      span {
+        display: inline-block;
+        width: 40px;
+        padding: 5px 10px;
+        position: absolute;
+        top: 4px;
+        left: 0;
+        color: inherit;
+        cursor: pointer;
+        i {
+          display: block;
+          width: 100%;
+          margin-bottom: 5px;
+          border-top: 2px solid #f2f3ee;
+          transform: rotate(15deg);
+          pointer-events: auto;
+        }
+      }
+      b {
+        margin-left: 51px;
+        cursor: pointer;
+      }
+    }
+    .middle-col {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+      text-align: center;
+      img {
+        width: 36px;
+        height: 40px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+    }
+    .right-col {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .loginTitle {
+        color: #f2f3ee;
+        display: inline-block;
+        transition: all 0.222s linear 0s;
+      }
+      .loginTitle:hover {
+        border-bottom: 1px solid #f2f3ee;
+      }
+      .cartInfo {
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background-color: #f2f3ee;
+        color: #353532;
+        margin-left: 40px;
+        text-align: center;
+      }
+      i {
+        display: block;
+        font-size: 25px;
+      }
+      small {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 8px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+@media (min-width: 1025px) {
+  .navbar {
+    padding: 30px 40px 0;
+  }
+  .loginTitle {
+    font-weight: 400;
+  }
+  .cardInfo {
+    position: relative;
+  }
+}
