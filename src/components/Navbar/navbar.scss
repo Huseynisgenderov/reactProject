@@ -5,6 +5,90 @@
   left: 0;
   width: 100%;
   z-index: 3;
+  .sideMenu {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    transition: all 0.333s ease-in-out 0s;
+    z-index: 9;
+    background: #fbfbfa;
+    color: #353532;
+    .menu-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      span {
+        position: absolute;
+        top: 10px;
+        cursor: pointer;
+      }
+    }
+    .menu-inner {
+      .menu-list {
+        .menu-item {
+
+          width: 100%;
+          .menu-title {
+            font-family: "Rumeur", "arial", "sans-serif";
+            font-size: 2.125rem;
+          }
+          .shop-list-item {
+            padding: 20px 0;
+            li {
+              margin-bottom: 16px;
+              a {
+                color: #353532;
+                font-size: 0.875rem;
+                font-weight: 300;
+                line-height: 1.22;
+              }
+            }
+          }
+          .other-list-item {
+            padding: 20px 0;
+            li {
+              margin-bottom: 16px;
+              a {
+                color: #353532;
+                font-size: 0.875rem;
+                font-weight: 300;
+                line-height: 1.22;
+              }
+            }
+          }
+          .info-list {
+            padding: 20px 0;
+            li {
+              margin-bottom: 16px;
+              font-family: "Basier", "arial", "sans-serif";
+              font-size: 0.875rem;
+              font-weight: 300;
+              line-height: 1.22;
+              a {
+                color: #353532;
+              }
+            }
+          }
+          p {
+            line-height: 1.22;
+            margin-bottom: 1rem;
+
+            a {
+              font-size: 1.125rem;
+              color: #9a9a98;
+            }
+          }
+          .top-info-p {
+            margin-top: 40px;
+          }
+        }
+        .kaft-world {
+          background-color: #edc50a;
+        }
+      }
+    }
+  }
   .row {
     display: flex;
     .menuBar {
@@ -92,5 +176,95 @@
   }
   .cardInfo {
     position: relative;
+  }
+  .sideMenu {
+    top: 0;
+    width: calc(100vw - 100px);
+    max-width: 2000px;
+    .menu-top {
+      height: 80px;
+      padding: 0;
+      span {
+        right: auto;
+        left: 30px;
+        padding: 24px;
+        height: 60px;
+        font-size: 31px;
+      }
+    }
+    .menu-inner {
+      top: 0;
+      height: 100%;
+      margin-left: 36px;
+      .menu-list {
+        display: flex;
+        justify-content: flex-end;
+        height: inherit;
+        .menu-item {
+          width: 36%;
+          padding-top: 55px;
+          .menu-title {
+            margin: 20px 0 10px;
+          }
+          .shop-list-item {
+            width: 60%;
+            float: left;
+          }
+          .other-list {
+            width: 40%;
+            float: left;
+          }
+        }
+        .kaft-world {
+          width: 30%;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1025px) and (max-width: 1299px) {
+  .sideMenu {
+    .menu-list {
+      .menu-item {
+        padding: 80px 20px 0;
+      }
+    }
+  }
+}
+@media (min-width: 1299px) {
+  .menu-item {
+    padding: 80px 50px 0;
+  }
+}
+@media (max-width: 1024px) {
+  .sideMenu {
+    position: fixed;
+    top: 0;
+    width: calc(100vw - 50px);
+    min-width: 300px;
+    max-width: 350px;
+    .menu-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 50px;
+      padding: 30px;
+      background: transparent;
+      z-index: 1;
+      span {
+        position: absolute;
+        top: 20px !important;
+        left: 300px;
+        font-size: 31px;
+      }
+    }
+    .menu-inner {
+      top: 0;
+      height: calc(100% - 50px);
+      padding-top: 50px;
+      .menu-item{
+        padding: 40px 30px;
+      }
+    }
   }
 }

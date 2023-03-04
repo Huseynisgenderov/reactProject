@@ -1,2 +1,116 @@
+@media (min-width: 1025px) {
+  .categoryTitle {
+    margin-bottom: 100px;
+  }
+  .title {
+    font-size: 2rem;
+    padding: 0 50px;
+  }
 
-  
+  .swiper {
+    height: 330px;
+  }
+}
+@media (max-width: 1025px) {
+  .categoryTitle {
+    margin-bottom: 30px;
+  }
+  .swiper {
+    height: 240px;
+  }
+  .title {
+    font-size: 1.875rem;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    padding: 0 20px;
+  }
+}
+@media (max-width: 1200px) {
+  .before {
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 80px;
+      border-top: 2px solid;
+      position: absolute;
+      left: -90px;
+      top: calc(50% - 1px);
+    }
+  }
+  .after {
+    &::before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 80px;
+      border-top: 2px solid;
+      right: -90px;
+      top: calc(50% - 1px);
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .before {
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 120px;
+      border-top: 2px solid;
+      position: absolute;
+      left: -90px;
+      top: calc(50% - 1px);
+    }
+  }
+  .after {
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 120px;
+      border-top: 2px solid;
+      position: absolute;
+      right: -90px;
+      top: calc(50% - 1px);
+    }
+  }
+}
+.category {
+  width: 100%;
+  .categoryTitle {
+    font-size: 1.375rem;
+    text-align: center;
+    font-weight: 300;
+    line-height: 1.22;
+    color: #353532;
+    font-family: "Basier", "arial", "sans-serif";
+  }
+  .swiper {
+    width: 100%;
+    .swiper-slide {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      object-fit: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .slide-inner {
+        color: #000000;
+        .title {
+          position: relative;
+          font-family: "Basier", "arial", "sans-serif";
+          font-weight: 300;
+          text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+          color: azure;
+        }
+        .before {
+          width: 100%;
+          position: relative;
+        }
+        .after {
+          width: 100%;
+          position: relative;
+        }
+      }
+    }
+  }
+}

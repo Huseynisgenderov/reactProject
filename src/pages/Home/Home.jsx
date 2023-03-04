@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../../components/Navbar/Navbar";
+import { Link } from "react-router-dom";
+//scss
 import "./home.scss";
+//image
 import hero from "../../assets/image/hero.webp";
 import hero2 from "../../assets/image/hero2.webp";
 import hero3 from "../../assets/image/hero3.webp";
-import { Link } from "react-router-dom";
+//component
+import Navbar from "../../components/Navbar/Navbar";
 import CategorySwiper from "../../components/categorySwiper/CategorySwiper";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -69,7 +73,37 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <CategorySwiper/>
+      <CategorySwiper />
+      <section className="tripple">
+        <div className="card left">
+          <Link>
+            <div className="mini">
+              Do something for someone you love, <br />
+              make their day.
+            </div>
+            <h4>GIFT CARD</h4>
+          </Link>
+        </div>
+        <div className="card middle">
+          <Link>
+            <div className="mini">
+              A limited edition package <br />
+              about Kaft’s 10 years.
+            </div>
+            <h4>X PACK</h4>
+          </Link>
+        </div>
+        <div className="card right">
+          <Link>
+            <div className="mini">
+              Fun way to get Kaft t-shirts <br />
+              at a <span className="link-underline">discount</span>
+            </div>
+            <h4>TEEMACHINE</h4>
+          </Link>
+        </div>
+      </section>
+      <Footer/>
     </div>
   );
 };

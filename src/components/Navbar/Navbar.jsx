@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navbar.scss";
 import logoLight from "../../assets/image/logo-light.svg";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [showSideMenu, setShowSideMenu] = useState(false);
+
+  const handleMenuBarClick = () => {
+    setShowSideMenu(!showSideMenu);
+  };
+
+  const handleSideMenuClose = () => {
+    setShowSideMenu(false);
+  };
   return (
     <div className="navbar">
       <div className="row">
-        <div className="menuBar">
+        <div className="menuBar" onClick={handleMenuBarClick}>
           <span>
             <i></i>
             <i></i>
             <i></i>
-            </span>
+          </span>
           <b>Menu</b>
         </div>
         <div className="middle-col">
@@ -21,13 +30,134 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="right-col">
-            <Link><p className="loginTitle">Login</p></Link>
-            <div className="cartInfo">
-                <small className="number">0</small>
-                <i class="fa-solid fa-cube"></i>
-            </div>
+          <Link>
+            <p className="loginTitle">Login</p>
+          </Link>
+          <div className="cartInfo">
+            <small className="number">0</small>
+            <i class="fa-solid fa-cube"></i>
+          </div>
         </div>
       </div>
+      {showSideMenu && (
+        <div className="sideMenu">
+          <div className="menu-top" onClick={handleSideMenuClose}>
+            <span>X</span>
+          </div>
+          <div className="menu-inner">
+            <ul className="menu-list">
+              <li className="menu-item">
+                <h2 className="menu-title">Shop</h2>
+                <ul class="shop-list-item">
+                  <li className="shop-item">
+                    <Link>Creative T-shirts</Link>
+                  </li>
+                  <li className="shop-item">
+                    <Link>Basic T-shirts</Link>
+                  </li>
+                  <li className="shop-item">
+                    <Link>Tanks</Link>
+                  </li>
+                  <li className="shop-item">
+                    <Link>Shorts</Link>
+                  </li>
+                  <li className="shop-item">
+                    <Link>Trousers</Link>
+                  </li>
+                  <li className="shop-item">
+                    <Link>Shorts</Link>
+                  </li>
+                  <li className="shop-item">
+                    <Link>Trousers</Link>
+                  </li>
+                  <li className="shop-item">
+                    <Link>Bags</Link>
+                  </li>
+                  <li className="shop-item">
+                    <Link>Jacket</Link>
+                  </li>
+                  <li className="shop-item">
+                    <Link>Creative Hoodies</Link>
+                  </li>
+                  <li className="shop-item">
+                    <Link>Zip Hoodies</Link>
+                  </li>
+                  <li className="shop-item">
+                    <Link>Sweatshirts</Link>
+                  </li>
+                  <li className="shop-item">
+                    <Link>Beanies</Link>
+                  </li>
+                  <li className="shop-item">
+                    <Link>Socks</Link>
+                  </li>
+                </ul>
+                <ul class="other-list-item">
+                  <li>
+                    <Link>Fujifilm x KAFT</Link>
+                  </li>
+                  <li>
+                    <Link>2022 T-shirt Series</Link>
+                  </li>
+                  <li>
+                    <Link>Hybrid Minds / NFT</Link>
+                  </li>
+                  <li>
+                    <Link>Kaft Colors</Link>
+                  </li>
+                  <li>
+                    <Link>Lookbook</Link>
+                  </li>
+                  <li>
+                    <Link>Gift Card</Link>
+                  </li>
+                  <li>
+                    <Link>Tee Machine</Link>
+                  </li>
+                </ul>
+              </li>
+              <li className="menu-item">
+                <h2 className="menu-title">Info</h2>
+                <ul class="info-list">
+                  <li>
+                    <Link>Order Status</Link>
+                  </li>
+                  <li>
+                    <Link>Return and Change</Link>
+                  </li>
+                  <li>
+                    <Link>Help</Link>
+                  </li>
+                  <li>
+                    <Link>Contact</Link>
+                  </li>
+                </ul>
+                <p className="top-info-p">
+                  <Link>Live Chat</Link>
+                </p>
+                <p>
+                  <Link>info@kaft.com</Link>
+                </p>
+                <p>
+                  <Link>+90 212 2673634</Link>
+                </p>
+              </li>
+              <li className="menu-item kaft-world">
+                <h2 className="menu-title">Kaft World</h2>
+                <ul class="info-list">
+                        <li><Link>About Kaft</Link></li>
+                        <li><Link>Designers</Link></li>
+                        <li><Link>Journeys</Link></li>
+                        <li><Link>Kaftsoul - Photos</Link></li>
+                        <li><Link>Videos</Link></li>
+                        <li><Link>Join The Team</Link></li>
+                        <li><Link>Wallpapers</Link></li>
+                    </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
