@@ -1,5 +1,4 @@
 * {
-  // font-family: "Rumeur","arial","sans-serif";
   font-family: "Basier", "arial", "sans-serif";
   margin: 0;
   padding: 0;
@@ -7,6 +6,7 @@
   box-sizing: border-box;
   list-style: none;
 }
+//Font-face
 @font-face {
   font-family: "Rumeur";
   src: url("../../assets/fonts/rumeur.otf") format("opentype");
@@ -15,6 +15,7 @@
   font-family: "Basier";
   src: url("../../assets/fonts/BasierCircle-Regular.otf") format("opentype");
 }
+//Element Scss
 .home {
   width: 100%;
   .slider {
@@ -153,7 +154,7 @@
     }
   }
 }
-
+//Media
 @media (min-width: 1025px) {
   .slider {
     margin-bottom: 100px;

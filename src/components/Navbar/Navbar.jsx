@@ -1,32 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+//Scss
 import "./navbar.scss";
+//Image
 import logoLight from "../../assets/image/logo-light.svg";
+import scrolledImg from "../../assets/image/kaft_logo.svg";
+//react-router-dom
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const [showSideMenu, setShowSideMenu] = useState(false);
 
   const handleMenuBarClick = () => {
     setShowSideMenu(!showSideMenu);
+    document.querySelector(".navbar").classList.toggle("show");
   };
 
   const handleSideMenuClose = () => {
     setShowSideMenu(false);
+    document.querySelector(".navbar").classList.remove("show");
   };
   return (
-    <div className="navbar">
+    <div className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="row">
-        <div className="menuBar" onClick={handleMenuBarClick}>
-          <span>
+        <div className="menuBar">
+          <span onClick={handleMenuBarClick}>
             <i></i>
             <i></i>
             <i></i>
           </span>
-          <b>Menu</b>
+          <b onClick={handleMenuBarClick}>Menu</b>
         </div>
         <div className="middle-col">
           <Link to="/">
-            <img src={logoLight} alt="logo" />
+            <img src={scrolled ? scrolledImg : logoLight} alt="logo" />
           </Link>
         </div>
         <div className="right-col">
@@ -40,7 +61,7 @@ const Navbar = () => {
         </div>
       </div>
       {showSideMenu && (
-        <div className="sideMenu">
+        <div className={`sideMenu ${showSideMenu ? "open" : ""}`}>
           <div className="menu-top" onClick={handleSideMenuClose}>
             <span>X</span>
           </div>
@@ -145,14 +166,28 @@ const Navbar = () => {
               <li className="menu-item kaft-world">
                 <h2 className="menu-title">Kaft World</h2>
                 <ul class="info-list">
-                        <li><Link>About Kaft</Link></li>
-                        <li><Link>Designers</Link></li>
-                        <li><Link>Journeys</Link></li>
-                        <li><Link>Kaftsoul - Photos</Link></li>
-                        <li><Link>Videos</Link></li>
-                        <li><Link>Join The Team</Link></li>
-                        <li><Link>Wallpapers</Link></li>
-                    </ul>
+                  <li>
+                    <Link>About Kaft</Link>
+                  </li>
+                  <li>
+                    <Link>Designers</Link>
+                  </li>
+                  <li>
+                    <Link>Journeys</Link>
+                  </li>
+                  <li>
+                    <Link>Kaftsoul - Photos</Link>
+                  </li>
+                  <li>
+                    <Link>Videos</Link>
+                  </li>
+                  <li>
+                    <Link>Join The Team</Link>
+                  </li>
+                  <li>
+                    <Link>Wallpapers</Link>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>

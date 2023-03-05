@@ -7,13 +7,11 @@ import hero from "../../assets/image/hero.webp";
 import hero2 from "../../assets/image/hero2.webp";
 import hero3 from "../../assets/image/hero3.webp";
 //component
-import Navbar from "../../components/Navbar/Navbar";
 import CategorySwiper from "../../components/categorySwiper/CategorySwiper";
-import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
+ //slide data
   const slides = [
     {
       image: hero,
@@ -44,7 +42,6 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Navbar />
       <div className="slider">
         {slides.map((slide, index) => (
           <div
@@ -103,7 +100,6 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <Footer/>
     </div>
   );
 };

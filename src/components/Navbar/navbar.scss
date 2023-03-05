@@ -9,7 +9,8 @@
     position: fixed;
     left: 0;
     height: 100%;
-    transition: all 0.333s ease-in-out 0s;
+    transition: all 1s ease-in-out;
+    transform: translateX(-100%);
     z-index: 9;
     background: #fbfbfa;
     color: #353532;
@@ -27,7 +28,6 @@
     .menu-inner {
       .menu-list {
         .menu-item {
-
           width: 100%;
           .menu-title {
             font-family: "Rumeur", "arial", "sans-serif";
@@ -140,14 +140,14 @@
         color: #f2f3ee;
         display: inline-block;
         transition: all 0.222s linear 0s;
-      }
-      .loginTitle:hover {
-        border-bottom: 1px solid #f2f3ee;
+        &:hover {
+          border-bottom: 1px solid #f2f3ee;
+        }
       }
       .cartInfo {
         display: inline-block;
-        width: 64px;
-        height: 64px;
+        width: 55px;
+        height: 55px;
         border-radius: 50%;
         background-color: #f2f3ee;
         color: #353532;
@@ -156,7 +156,7 @@
       }
       i {
         display: block;
-        font-size: 25px;
+        font-size: 20px;
       }
       small {
         display: block;
@@ -167,15 +167,43 @@
     }
   }
 }
+.scrolled {
+  background-color: #fff;
+  color: #353532;
+  padding: 16px 40px 0 40px !important;
+  .menuBar {
+    span {
+      i {
+        border-top: 2px solid #0d0c10 !important;
+      }
+    }
+  }
+  .right-col {
+    padding-bottom: 10px;
+    .loginTitle {
+      color: #0d0c10 !important;
+      &:hover {
+        border-bottom: 1px solid #0d0c10 !important;
+      }
+    }
+  }
+  .cartInfo {
+    background-color: #0d0c10 !important;
+    color: #fff !important;
+  }
+}
+.show {
+  .sideMenu {
+    transition: all 1s ease-in-out;
+    transform: translateX(0) !important;
+  }
+}
 @media (min-width: 1025px) {
   .navbar {
     padding: 30px 40px 0;
   }
   .loginTitle {
     font-weight: 400;
-  }
-  .cardInfo {
-    position: relative;
   }
   .sideMenu {
     top: 0;
@@ -222,6 +250,7 @@
     }
   }
 }
+//Media
 @media (min-width: 1025px) and (max-width: 1299px) {
   .sideMenu {
     .menu-list {
@@ -237,6 +266,23 @@
   }
 }
 @media (max-width: 1024px) {
+  .navbar {
+    padding-top: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    b {
+      display: none;
+    }
+  }
+  .loginTitle {
+    display: none !important;
+  }
+
+  .cartInfo {
+    margin-left: 0 !important;
+    color: #f2f3ee !important;
+    background-color: transparent !important;
+  }
   .sideMenu {
     position: fixed;
     top: 0;
@@ -262,7 +308,7 @@
       top: 0;
       height: calc(100% - 50px);
       padding-top: 50px;
-      .menu-item{
+      .menu-item {
         padding: 40px 30px;
       }
     }

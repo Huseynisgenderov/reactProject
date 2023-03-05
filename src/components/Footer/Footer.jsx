@@ -1,6 +1,9 @@
 import { useState } from "react";
+//Scss
 import "./footer.scss";
+//react-router-dom
 import { Link } from "react-router-dom";
+//images
 import uk from "../../assets/image/uk.png";
 import visa from "../../assets/image/visa.png";
 import paypal from "../../assets/image/PAYPAL.png";
@@ -223,6 +226,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+          <div className="menu m-small"></div>
         </div>
       </div>
       <div className="footer-middle">

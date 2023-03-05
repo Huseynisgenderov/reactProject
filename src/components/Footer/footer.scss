@@ -199,7 +199,11 @@ footer {
     }
   }
 }
+//Media
 @media (max-width: 1025px) {
+  .m-large{
+    display: none !important;
+  }
   .footer-left {
     flex: 0 0 100%;
     max-width: 100%;
