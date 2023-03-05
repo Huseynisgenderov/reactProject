@@ -11,7 +11,7 @@ import CategorySwiper from "../../components/categorySwiper/CategorySwiper";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
- //slide data
+  //slide data
   const slides = [
     {
       image: hero,
@@ -35,7 +35,7 @@ const Home = () => {
       setCurrentSlide((currentSlide + 1) % slides.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [currentSlide]);
+  }, [currentSlide, slides.length]);
   const handleButtonClick = (index) => {
     setCurrentSlide(index);
   };
