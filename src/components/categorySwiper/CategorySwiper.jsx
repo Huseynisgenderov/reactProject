@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 //images
 import atlet from "../../assets/image/atlet.jpg";
@@ -23,7 +23,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay} from "swiper";
 
 const CategorySwiper = () => {
   return (
