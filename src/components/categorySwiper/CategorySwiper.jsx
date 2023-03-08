@@ -23,7 +23,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay} from "swiper";
+import { Autoplay } from "swiper";
 
 const CategorySwiper = () => {
   return (
@@ -140,7 +140,7 @@ const CategorySwiper = () => {
           <SwiperSlide style={{ backgroundImage: `url(${tisort})` }}>
             <Link className="slide-inner">
               <span className="before"></span>
-              <span className="title">Creative T-shirts</span>
+              <span className="title creative">Creative T-shirts</span>
               <span className="after"></span>
             </Link>
           </SwiperSlide>

@@ -8,7 +8,6 @@ import uk from "../../assets/image/uk.png";
 import visa from "../../assets/image/visa.png";
 import paypal from "../../assets/image/PAYPAL.png";
 
-
 const Footer = () => {
   const [showConfirm, setShowConfirm] = useState(false);
 
@@ -226,7 +225,67 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="menu m-small"></div>
+          <div className="menu m-small">
+            <ul class="ul-clear">
+              <li>
+                <Link>About Kaft</Link>
+              </li>
+              <li>
+                <Link>Order Status</Link>
+              </li>
+              <li>
+                <Link>Return and Change</Link>
+              </li>
+              <li>
+                <Link>Designers</Link>
+              </li>
+              <li>
+                <Link>Join The Team</Link>
+              </li>
+              <li>
+                <Link>Help</Link>
+              </li>
+              <li>
+                <Link>Order and Payment</Link>
+              </li>
+              <li>
+                <Link>Trading Guide</Link>
+              </li>
+              <li>
+                <Link>
+                  Acknowledgement Letter Regarding The Protection of Personal
+                  Data
+                </Link>
+              </li>
+              <li>
+                <Link>Cookie Policy</Link>
+              </li>
+              <li>
+                <Link>Cookie Preferences</Link>
+              </li>
+              <li>
+                <Link>Kaftsoul Acknowledgement Letter</Link>
+              </li>
+              <li>
+                <Link>Employee Candidate Acknowledgement Letter</Link>
+              </li>
+              <li>
+                <Link>Data Controller Apply Form</Link>
+              </li>
+              <li>
+                <Link>Membership Agreement</Link>
+              </li>
+              <li>
+                <Link>Purchase Agreement</Link>
+              </li>
+              <li>
+                <Link>Privacy Policy</Link>
+              </li>
+              <li>
+                <Link>Contact</Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div className="footer-middle">

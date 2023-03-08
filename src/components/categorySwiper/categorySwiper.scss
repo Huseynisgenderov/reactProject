@@ -26,6 +26,17 @@
     padding: 0 20px;
   }
 }
+@media (max-width: 633px) {
+  .title {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 1143px) and (min-width: 1025px) {
+  .title {
+    font-size: 1.38rem;
+  }
+}
+
 @media (max-width: 1200px) {
   .before {
     &::before {
