@@ -98,10 +98,6 @@ footer {
       }
       .menu {
         margin: 0 auto 20px;
-        .ul-clear {
-          // display: flex;
-          // flex-wrap: wrap;
-        }
         h2 {
           font-weight: 300;
           font-size: 21px;
@@ -111,7 +107,13 @@ footer {
           font-size: 1.125rem;
           color: #353532;
           line-height: 1.6;
+          &:hover {
+            border-bottom: 1px solid #353532;
+          }
         }
+      }
+      .footer-cart-detail-info{
+        display: none;
       }
     }
   }

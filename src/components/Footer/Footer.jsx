@@ -286,6 +286,61 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+          <div class="footer-cart-detail-info">
+            <div class="row">
+              <div class="col-md-6 mb-20 pr-20">
+                <h3>Security and Personal Data</h3>
+                Your credit card information encoded with SSL is sent to the
+                bank without being taken into our system. Your personal
+                information is secured with{" "}
+                <Link
+                  className="link-inline-tdu"
+                  to="https://www.kaft.com/en/company/privacy-policy"
+                >
+                  Privacy Policy
+                </Link>{" "}
+                and{" "}
+                <Link
+                  className="link-inline-tdu"
+                  to="https://www.kaft.com/en/company/acknowledgement-letter-regarding-personal-data"
+                >
+                  Acknowledgement Letter Regarding The Protection of Personal
+                  Data
+                </Link>
+              </div>
+              <div class="col-md-6 mb-20">
+                <h3>Terms of Return</h3>
+                You can exchange or return the product/products you purchased
+                within 1 year after the delivery date. For further information
+                about the conditions of returning/exchanging an item you can
+                visit{" "}
+                <Link
+                  className="link-inline-tdu"
+                  to="https://www.kaft.com/en/company/help#returnpolicy"
+                >
+                  Return and Exchange
+                </Link>
+              </div>
+              <div class="col-md-6 mb-20 pr-20">
+                <h3>Help</h3>
+                For your questions about your orders you can use{" "}
+                <Link
+                  className="link-inline-tdu"
+                  to="https://www.kaft.com/en/company/help"
+                >
+                  Help
+                </Link>{" "}
+                and for your recommendations for KAFT you can use{" "}
+                <Link
+                  className="link-inline-tdu"
+                  to="https://www.kaft.com/en/company/contact"
+                >
+                  Contact
+                </Link>{" "}
+                screen
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="footer-middle">

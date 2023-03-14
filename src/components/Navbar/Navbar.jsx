@@ -54,10 +54,10 @@ const Navbar = () => {
           <Link>
             <p className="loginTitle">Login</p>
           </Link>
-          <div className="cartInfo">
+          <Link className="cartInfo" to="/cart">
             <small className="number">0</small>
             <i class="fa-solid fa-cube"></i>
-          </div>
+          </Link>
         </div>
       </div>
       {showSideMenu && (

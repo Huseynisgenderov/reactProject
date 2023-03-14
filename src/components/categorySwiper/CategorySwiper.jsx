@@ -57,35 +57,35 @@ const CategorySwiper = () => {
           className="mySwiper"
         >
           <SwiperSlide style={{ backgroundImage: `url(${atlet})` }}>
-            <Link className="slide-inner">
+            <Link to="/products" className="slide-inner">
               <span className="before"></span>
               <span className="title">Tanks</span>
               <span className="after"></span>
             </Link>
           </SwiperSlide>
           <SwiperSlide style={{ backgroundImage: `url(${backpack})` }}>
-            <Link className="slide-inner">
+            <Link to="/products" className="slide-inner">
               <span className="before"></span>
               <span className="title">Bags</span>
               <span className="after"></span>
             </Link>
           </SwiperSlide>
           <SwiperSlide style={{ backgroundImage: `url(${basictisort})` }}>
-            <Link className="slide-inner">
+            <Link to="/products" className="slide-inner">
               <span className="before"></span>
               <span className="title">Basic T-shirts</span>
               <span className="after"></span>
             </Link>
           </SwiperSlide>
           <SwiperSlide style={{ backgroundImage: `url(${ceket})` }}>
-            <Link className="slide-inner">
+            <Link to="/products" className="slide-inner">
               <span className="before"></span>
               <span className="title">Jacket</span>
               <span className="after"></span>
             </Link>
           </SwiperSlide>
           <SwiperSlide style={{ backgroundImage: `url(${corab})` }}>
-            <Link className="slide-inner">
+            <Link to="/products" className="slide-inner">
               <span className="before"></span>
               <span className="title">Socks</span>
               <span className="after"></span>
@@ -94,7 +94,7 @@ const CategorySwiper = () => {
           <SwiperSlide
             style={{ backgroundImage: `url(${kapsonlu_apendabrick})` }}
           >
-            <Link className="slide-inner">
+            <Link to="/products" className="slide-inner">
               <span className="before"></span>
               <span className="title">Creative Hoodies</span>
               <span className="after"></span>
@@ -103,42 +103,42 @@ const CategorySwiper = () => {
           <SwiperSlide
             style={{ backgroundImage: `url(${kapsonlu_zippersulphur})` }}
           >
-            <Link className="slide-inner">
+            <Link to="/products" className="slide-inner">
               <span className="before"></span>
               <span className="title">Zip Hoodies</span>
               <span className="after"></span>
             </Link>
           </SwiperSlide>
           <SwiperSlide style={{ backgroundImage: `url(${pantolon})` }}>
-            <Link className="slide-inner">
+            <Link to="/products" className="slide-inner">
               <span className="before"></span>
               <span className="title">Trousers</span>
               <span className="after"></span>
             </Link>
           </SwiperSlide>
           <SwiperSlide style={{ backgroundImage: `url(${papaq})` }}>
-            <Link className="slide-inner">
+            <Link to="/products" className="slide-inner">
               <span className="before"></span>
               <span className="title">Beanies</span>
               <span className="after"></span>
             </Link>
           </SwiperSlide>
           <SwiperSlide style={{ backgroundImage: `url(${shorts})` }}>
-            <Link className="slide-inner">
+            <Link to="/products" className="slide-inner">
               <span className="before"></span>
               <span className="title">Shorts</span>
               <span className="after"></span>
             </Link>
           </SwiperSlide>
           <SwiperSlide style={{ backgroundImage: `url(${sweatshirt})` }}>
-            <Link className="slide-inner">
+            <Link to="/products" className="slide-inner">
               <span className="before"></span>
               <span className="title">Sweatshirts</span>
               <span className="after"></span>
             </Link>
           </SwiperSlide>
           <SwiperSlide style={{ backgroundImage: `url(${tisort})` }}>
-            <Link className="slide-inner">
+            <Link to="/products" className="slide-inner">
               <span className="before"></span>
               <span className="title creative">Creative T-shirts</span>
               <span className="after"></span>
