@@ -137,7 +137,7 @@ const Navbar = () => {
                   </li>
                 </ul>
               </li>
-              <li className="menu-item">
+              <li className="menu-item second">
                 <h2 className="menu-title">Info</h2>
                 <ul class="info-list">
                   <li>

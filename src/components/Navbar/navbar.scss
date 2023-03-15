@@ -140,7 +140,7 @@
       .loginTitle {
         color: #f2f3ee;
         display: inline-block;
-        transition: all 0.222s linear 0s;
+        transition: all 0.5s linear 0s;
         &:hover {
           border-bottom: 1px solid #f2f3ee;
         }
@@ -229,6 +229,9 @@
         display: flex;
         justify-content: flex-end;
         height: inherit;
+        .second {
+          background-color: #f2f3ef;
+        }
         .menu-item {
           width: 36%;
           padding-top: 55px;
