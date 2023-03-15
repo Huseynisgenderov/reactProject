@@ -6,6 +6,7 @@
   width: 100%;
   z-index: 3;
   .sideMenu {
+    overflow-y: scroll;
     position: fixed;
     left: 0;
     height: 100%;
