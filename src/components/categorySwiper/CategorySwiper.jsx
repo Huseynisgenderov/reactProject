@@ -31,7 +31,7 @@ const CategorySwiper = () => {
       <h2 className="categoryTitle">There are more things to be discovered</h2>
       <div className="swiper">
         <Swiper
-          slidesPerView={3}
+          slidesPerView={2}
           spaceBetween={30}
           centeredSlides={true}
           loop={true}
@@ -46,7 +46,7 @@ const CategorySwiper = () => {
             },
             768: {
               slidesPerView: 3,
-              spaceBetween: 40,
+              spaceBetween: 30,
             },
             1024: {
               slidesPerView: 3,

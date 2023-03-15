@@ -62,7 +62,6 @@ const Navbar = () => {
       </div>
       {showSideMenu && (
         <div className={`sideMenu ${showSideMenu ? "open" : ""}`}>
-          {/* <div className="overlay"></div> */}
           <div className="menu-top" onClick={handleSideMenuClose}>
             <span>X</span>
           </div>
