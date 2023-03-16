@@ -17,25 +17,6 @@
         height: 36px;
         opacity: 0.9;
       }
-      .back {
-        display: inline-block;
-        padding: 12px;
-        font-size: 0;
-        position: fixed;
-        left: 21px;
-        top: calc((75px / 2) - 20px);
-        z-index: 5;
-        pointer-events: visible;
-        &::before {
-          content: "";
-          display: inline-block;
-          width: 12px;
-          height: 12px;
-          border-bottom: 1.5px solid #353532;
-          border-left: 1.5px solid #353532;
-          transform: rotate(45deg);
-        }
-      }
     }
     #cart {
       position: relative;
@@ -202,6 +183,27 @@ a {
   color: #353532;
 }
 @media (max-width: 1024px) {
+  header {
+    .back {
+      display: inline-block;
+      padding: 12px;
+      font-size: 0;
+      position: fixed;
+      left: 21px;
+      top: calc((75px / 2) - 20px);
+      z-index: 5;
+      pointer-events: visible;
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-bottom: 1.5px solid #353532;
+        border-left: 1.5px solid #353532;
+        transform: rotate(45deg);
+      }
+    }
+  }
   .step-progress {
     position: fixed;
     top: 0;
