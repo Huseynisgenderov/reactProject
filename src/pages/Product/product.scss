@@ -1,26 +1,26 @@
-.product-page {
-  .navbar {
-    .cartInfo {
-      background-color: #353532 !important;
-      color: #f2f3ee !important;
+.black {
+  .cartInfo {
+    background-color: #353532 !important;
+    color: #f2f3ee !important;
+  }
+  .loginTitle {
+    color: #353532 !important;
+    &:hover {
+      text-decoration: underline;
     }
-    .loginTitle {
-      color: #353532 !important;
-      &:hover {
-        text-decoration: underline;
-      }
+  }
+  .menuBar {
+    b {
+      color: #353532;
     }
-    .menuBar {
-      b {
-        color: #353532;
-      }
-      span {
-        i {
-          border-top: 2px solid #353532 !important;
-        }
+    span {
+      i {
+        border-top: 2px solid #353532 !important;
       }
     }
   }
+}
+.product-page {
   .product-list {
     margin-top: 100px;
     width: 100%;

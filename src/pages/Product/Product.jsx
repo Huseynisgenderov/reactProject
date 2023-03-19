@@ -11,17 +11,14 @@ import banner3 from "../../assets/image/designers.jpg";
 import bannerMob from "../../assets/image/designers_mob.jpg";
 //components
 import CategorySwiper from "../../components/categorySwiper/CategorySwiper";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 
 const Product = () => {
   return (
     <div className="product-page"> 
-    <Navbar/>
       <div className="product-list">
         <div className="products">
           <div className="product">
-            <Link className="product-top">
+            <Link className="product-top" to={"/products/1"}>
               <img src={tisort} alt="product" />
             </Link>
             <div className="product-bottom">
@@ -117,7 +114,6 @@ const Product = () => {
           </Link>
         </div>
       </div>
-      <Footer/>
     </div>
   );
 };

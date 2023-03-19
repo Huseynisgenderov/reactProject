@@ -5,10 +5,11 @@ import "./navbar.scss";
 import logoLight from "../../assets/image/logo-light.svg";
 import scrolledImg from "../../assets/image/kaft_logo.svg";
 //react-router-dom
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -25,29 +26,28 @@ const Navbar = () => {
 
   const [showSideMenu, setShowSideMenu] = useState(false);
 
-  const handleMenuBarClick = () => {
-    setShowSideMenu(!showSideMenu);
-    document.querySelector(".navbar").classList.toggle("show");
-  };
-
-  const handleSideMenuClose = () => {
-    setShowSideMenu(false);
-    document.querySelector(".navbar").classList.remove("show");
-  };
   return (
-    <div className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <div
+      className={`navbar ${
+        scrolled ? "scrolled" : pathname !== "/" ? "black" : ""
+      }`}
+      id={showSideMenu ? "show" : ""}
+    >
       <div className="row">
         <div className="menuBar">
-          <span onClick={handleMenuBarClick}>
+          <span onClick={() => setShowSideMenu(!showSideMenu)}>
             <i></i>
             <i></i>
             <i></i>
           </span>
-          <b onClick={handleMenuBarClick}>Menu</b>
+          <b onClick={() => setShowSideMenu(!showSideMenu)}>Menu</b>
         </div>
         <div className="middle-col">
           <Link to="/">
-            <img src={scrolled ? scrolledImg : logoLight} alt="logo" />
+            <img
+              src={scrolled || pathname !== "/" ? scrolledImg : logoLight}
+              alt="logo"
+            />
           </Link>
         </div>
         <div className="right-col">
@@ -61,7 +61,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="sideMenu">
-        <div className="menu-top" onClick={handleSideMenuClose}>
+        <div className="menu-top" onClick={() => setShowSideMenu(false)}>
           <span>X</span>
         </div>
         <div className="menu-inner">
