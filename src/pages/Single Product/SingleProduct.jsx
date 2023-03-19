@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+//scss
 import "./singleProduct.scss";
+//images
 import tisort from "../../assets/image/tisort.jpg";
 import geeva from "../../assets/image/geeva-kaft.svg";
 import gender from "../../assets/image/product_style_gender_unisex.svg";
@@ -11,8 +13,9 @@ import mob2 from "../../assets/image/mob2.jpg";
 import mobsu from "../../assets/image/mob-su.svg";
 import detail from "../../assets/image/detail.svg";
 import detailImg from "../../assets/image/tisort_detail.jpg";
-
+//react-router-dom
 import { Link } from "react-router-dom";
+//local-data
 import { sizeData } from "./sizes";
 
 const SingleProduct = () => {
