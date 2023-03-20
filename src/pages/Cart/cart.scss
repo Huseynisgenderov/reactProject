@@ -66,6 +66,12 @@
       padding-right: 500px;
       .cart-rows {
         margin: 15px 0 0;
+        .noItem{
+          text-align: center;
+          font-family: "Rumeur","arial","sans-serif";
+          font-size: 40px;
+          margin-top: 20px;
+        }
         .cart-row {
           padding-right: 40px;
           .row-top {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState,useContext } from "react";
 //scss
 import "./product.scss";
 //react-router
@@ -11,64 +11,43 @@ import banner3 from "../../assets/image/designers.jpg";
 import bannerMob from "../../assets/image/designers_mob.jpg";
 //components
 import CategorySwiper from "../../components/categorySwiper/CategorySwiper";
+//useContext
+import { CartContext } from "../../cartContext";
+
+
+// import axios from "axios";
 
 const Product = () => {
+  // const [data, setData] = useState([]);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/api/products/")
+  //     .then((res) => setData(res.data))
+  //     .catch((err) => console.log(err));
+  // }, []);
+
+
+  const {data} = useContext(CartContext)
+
   return (
-    <div className="product-page"> 
+    <div className="product-page">
       <div className="product-list">
         <div className="products">
-          <div className="product">
-            <Link className="product-top" to={"/products/1"}>
-              <img src={tisort} alt="product" />
+          {data.map((product)=>(
+          <div className="product" key={product.id}>
+            <Link className="product-top" to={`/products/${product.id}`}>
+              <img src={`http://localhost:5000/${product.productImage}`} alt="product" />
             </Link>
             <div className="product-bottom">
               <div className="info">
                 <Link>
-                  <p className="product-title">Regular - Tar</p>
-                  <p className="price">$ 31</p>
+                  <p className="product-title">{product.name}</p>
+                  <p className="price">$ {product.price}</p>
                 </Link>
               </div>
             </div>
           </div>
-          <div className="product">
-            <Link className="product-top">
-              <img src={tisort} alt="product" />
-            </Link>
-            <div className="product-bottom">
-              <div className="info">
-                <Link>
-                  <p className="product-title">Regular - Tar</p>
-                  <p className="price">$ 31</p>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="product">
-            <Link className="product-top">
-              <img src={tisort} alt="product" />
-            </Link>
-            <div className="product-bottom">
-              <div className="info">
-                <Link>
-                  <p className="product-title">Regular - Tar</p>
-                  <p className="price">$ 31</p>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="product">
-            <Link className="product-top">
-              <img src={tisort} alt="product" />
-            </Link>
-            <div className="product-bottom">
-              <div className="info">
-                <Link>
-                  <p className="product-title">Regular - Tar</p>
-                  <p className="price">$ 31</p>
-                </Link>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
       <CategorySwiper />
@@ -100,17 +79,13 @@ const Product = () => {
       <div className="collection">
         <div className="creators">
           <Link>
-          <img className="big" src={banner3} alt="banner" />
-          <img className="small" src={bannerMob} alt="bannerMob" />
-          <div className="text">
-            <div className="mini">
-            Who creates these original designs? 
+            <img className="big" src={banner3} alt="banner" />
+            <img className="small" src={bannerMob} alt="bannerMob" />
+            <div className="text">
+              <div className="mini">Who creates these original designs?</div>
+              <h4>DESIGNERS</h4>
+              <div className="view">View</div>
             </div>
-            <h4>DESIGNERS</h4>
-            <div className="view">
-            View
-            </div>
-          </div>
           </Link>
         </div>
       </div>

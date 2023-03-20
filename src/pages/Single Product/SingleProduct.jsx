@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 //scss
 import "./singleProduct.scss";
 //images
-import tisort from "../../assets/image/tisort.jpg";
 import geeva from "../../assets/image/geeva-kaft.svg";
 import gender from "../../assets/image/product_style_gender_unisex.svg";
 import style from "../../assets/image/product_style_style_relax.svg";
@@ -14,14 +13,34 @@ import mobsu from "../../assets/image/mob-su.svg";
 import detail from "../../assets/image/detail.svg";
 import detailImg from "../../assets/image/tisort_detail.jpg";
 //react-router-dom
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 //local-data
 import { sizeData } from "./sizes";
+
+import { CartContext } from "../../cartContext";
+// import axios from "axios";
 
 const SingleProduct = () => {
   const [showInch, setShowInch] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
-  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedSize, setSelectedSize] = useState([]);
+  const { data, addToCart } = useContext(CartContext);
+  const [product, setProduct] = useState(null);
+  // const [data, setData] = useState([null]);
+  const { id } = useParams();
+
+  useEffect(() => {
+    setProduct(() => data.find((product) => product.id === id));
+  }, [id, data]);
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/api/products/")
+  //     .then((res) => setData(res.data))
+  //     .catch((err) => console.log(err));
+  // }, []);
+
+  // const findData = data.find((item) => item.id == id);
 
   const handleClick = (index) => {
     setActiveIndex(index === activeIndex ? -1 : index);
@@ -32,13 +51,16 @@ const SingleProduct = () => {
     <div className="singleProduct-page">
       <div className="single-content" id="return">
         <div className="product-img">
-          <img src={tisort} alt="product" />
+          <img
+            src={`http://localhost:5000/${product?.productImage}`}
+            alt="product"
+          />
         </div>
         <div className="product-details">
           <div className="detail-wrapper">
             <div className="detail-inner">
               <div className="info">
-                <h1>Keymaker</h1>
+                <h1>{product?.name}</h1>
                 <Link>
                   <img src={geeva} alt="geave" />
                 </Link>
@@ -102,9 +124,11 @@ const SingleProduct = () => {
               </div>
               <div className="purchase">
                 <div className="price">
-                  <span className="current">$ 39</span>
+                  <span className="current">
+                    $ {product?.price}
+                  </span>
                 </div>
-                <button className="add-btn">
+                <button className="add-btn" onClick={()=> addToCart(product.id)}>
                   <span class="add">Add to Cart</span>
                 </button>
               </div>

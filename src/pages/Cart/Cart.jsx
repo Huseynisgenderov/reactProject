@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+//scss
 import "./cart.scss";
+//react-router-dom
 import { Link } from "react-router-dom";
 import paltar from "../../assets/image/atlet.jpg";
+//component
 import Footer from "../../components/Footer/Footer";
 
+import { CartContext } from "../../cartContext";
+
 const Cart = () => {
+  const { cart } = useContext(CartContext);
+
   return (
     <div className="cart-page">
       <header>
@@ -29,29 +36,35 @@ const Cart = () => {
           </div>
         </div>
         <div className="cart-rows">
-          <div className="cart-row">
-            <div className="row-top">
-              <Link className="prd-img">
-                <img src={paltar} alt="" />
-              </Link>
-              <div className="row-inner">
-                <div className="prd-title">Methone - Asphalt - Bag</div>
-                <div className="prd-detail">Unisex / Asphalt / M</div>
-                <div className="prd-amount">
-                  <form>
-                    <label>Quantity</label>
-                    <Link class="prd-amount-update">-</Link>
-                    <input type="number" value="1" disabled="" />
-                    <Link class="prd-amount-update">+</Link>
-                  </form>
+          {cart.length === 0 ? (
+            <h2 className="noItem">No Cart Items</h2>
+          ) : (
+            cart.map((cartItem) => (
+              <div className="cart-row">
+                <div className="row-top">
+                  <Link className="prd-img">
+                    <img src={`http://localhost:5000/${cartItem?.productImage}`} alt="" />
+                  </Link>
+                  <div className="row-inner">
+                    <div className="prd-title">{cartItem.name}</div>
+                    <div className="prd-detail">Unisex / Asphalt / M</div>
+                    <div className="prd-amount">
+                      <form>
+                        <label>Quantity</label>
+                        <Link class="prd-amount-update">-</Link>
+                        <input type="number" value="1" disabled="" />
+                        <Link class="prd-amount-update">+</Link>
+                      </form>
+                    </div>
+                    <div className="close">
+                      <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div className="update-price">$ {cartItem.price}</div>
+                  </div>
                 </div>
-                <div className="close">
-                  <i class="fa-solid fa-xmark"></i>
-                </div>
-                <div className="update-price">$ 74</div>
               </div>
-            </div>
-          </div>
+            ))
+          )}
         </div>
         <div className="sum-type-cart">
           <div className="summary-wrapper">
@@ -65,7 +78,7 @@ const Cart = () => {
                     <div className="content">
                       <form>
                         <div className="input-container">
-                          <input type="text" placeholder="Enter code"/>
+                          <input type="text" placeholder="Enter code" />
                         </div>
                         <button>Apply</button>
                       </form>
@@ -92,7 +105,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

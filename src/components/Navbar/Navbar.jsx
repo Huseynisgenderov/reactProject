@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 //Scss
 import "./navbar.scss";
 //Image
@@ -6,10 +6,13 @@ import logoLight from "../../assets/image/logo-light.svg";
 import scrolledImg from "../../assets/image/kaft_logo.svg";
 //react-router-dom
 import { Link, useLocation } from "react-router-dom";
+//CartContext
+import { CartContext } from "../../cartContext";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
+  //for sticky navbar
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -24,7 +27,11 @@ const Navbar = () => {
     };
   }, []);
 
+  //for SideMenu
   const [showSideMenu, setShowSideMenu] = useState(false);
+
+  //for useContext
+  const { cart } = useContext(CartContext);
 
   return (
     <div
@@ -55,7 +62,7 @@ const Navbar = () => {
             <p className="loginTitle">Login</p>
           </Link>
           <Link className="cartInfo" to="/cart">
-            <small className="number">0</small>
+            <small className="number">{cart.length}</small>
             <i class="fa-solid fa-cube"></i>
           </Link>
         </div>
