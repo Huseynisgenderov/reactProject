@@ -5,13 +5,16 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [data, setData] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/products/")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
-  const [cart, setCart] = useState([]);
+
   const addToCart = (id) => {
     const findProduct = data.find((data) => data.id === id);
     setCart((prev) => {
@@ -20,7 +23,17 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ data, cart, addToCart }}>
+    <CartContext.Provider
+      value={{
+        data,
+        setData,
+        cart,
+        addToCart,
+        setCart,
+        totalPrice,
+        setTotalPrice,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

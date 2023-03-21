@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 //scss
 import "./cart.scss";
 //react-router-dom
@@ -10,7 +10,34 @@ import Footer from "../../components/Footer/Footer";
 import { CartContext } from "../../cartContext";
 
 const Cart = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, setCart, totalPrice, setTotalPrice } = useContext(CartContext);
+
+  const increment = (id) => {
+    const updatedItem = cart.map((item) => {
+      if (item.id === id) {
+        return { ...item, quantity: item.quantity + 1 };
+      } else {
+        return item;
+      }
+    });
+    setCart(updatedItem);
+  };
+
+  const decrement = (id) => {
+    const updatedItem = cart.map((item) => {
+      if (item.id === id) {
+        return { ...item, quantity: item.quantity - 1 };
+      } else {
+        return item;
+      }
+    });
+    setCart(updatedItem);
+  };
+
+  const deleteItemFromCart = (id) =>{
+    const updatedCart = cart.filter(item => item.id !== id)
+    setCart(updatedCart)
+  }
 
   return (
     <div className="cart-page">
@@ -40,10 +67,13 @@ const Cart = () => {
             <h2 className="noItem">No Cart Items</h2>
           ) : (
             cart.map((cartItem) => (
-              <div className="cart-row">
+              <div className="cart-row" key={cartItem.id}>
                 <div className="row-top">
                   <Link className="prd-img">
-                    <img src={`http://localhost:5000/${cartItem?.productImage}`} alt="" />
+                    <img
+                      src={`http://localhost:5000/${cartItem?.productImage}`}
+                      alt=""
+                    />
                   </Link>
                   <div className="row-inner">
                     <div className="prd-title">{cartItem.name}</div>
@@ -51,12 +81,35 @@ const Cart = () => {
                     <div className="prd-amount">
                       <form>
                         <label>Quantity</label>
-                        <Link class="prd-amount-update">-</Link>
-                        <input type="number" value="1" disabled="" />
-                        <Link class="prd-amount-update">+</Link>
+                        <Link
+                          class="prd-amount-update"
+                          onClick={() => {
+                            if (cartItem.quantity > 1) {
+                              decrement(cartItem.id);
+                              setTotalPrice(totalPrice - cartItem.price);
+                            } else {
+                              return;
+                            }
+                          }}
+                        >
+                          -
+                        </Link>
+                        <span>{cartItem.quantity}</span>
+                        <Link
+                          class="prd-amount-update"
+                          onClick={() => {
+                            increment(cartItem.id);
+                            setTotalPrice(totalPrice + cartItem.price);
+                          }}
+                        >
+                          +
+                        </Link>
                       </form>
                     </div>
-                    <div className="close">
+                    <div className="close" onClick={()=>{
+                      deleteItemFromCart(cartItem.id)
+                      setTotalPrice(totalPrice - (cartItem.quantity * cartItem.price))
+                    }}>
                       <i class="fa-solid fa-xmark"></i>
                     </div>
                     <div className="update-price">$ {cartItem.price}</div>
@@ -91,7 +144,7 @@ const Cart = () => {
                       <div className="label">
                         Subtotal <span>USD (US Dollar)</span>
                       </div>
-                      <div className="sum-price">$ 74</div>
+                      <div className="sum-price">$ {totalPrice}</div>
                     </div>
                     <button>Check Out</button>
                     <div className="or">

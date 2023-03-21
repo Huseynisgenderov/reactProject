@@ -24,7 +24,8 @@ const SingleProduct = () => {
   const [showInch, setShowInch] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const [selectedSize, setSelectedSize] = useState([]);
-  const { data, addToCart } = useContext(CartContext);
+  const { data, addToCart, setTotalPrice, totalPrice } =
+    useContext(CartContext);
   const [product, setProduct] = useState(null);
   // const [data, setData] = useState([null]);
   const { id } = useParams();
@@ -124,11 +125,15 @@ const SingleProduct = () => {
               </div>
               <div className="purchase">
                 <div className="price">
-                  <span className="current">
-                    $ {product?.price}
-                  </span>
+                  <span className="current">$ {product?.price}</span>
                 </div>
-                <button className="add-btn" onClick={()=> addToCart(product.id)}>
+                <button
+                  className="add-btn"
+                  onClick={() => {
+                    addToCart(product.id);
+                    setTotalPrice(totalPrice + product.price);
+                  }}
+                >
                   <span class="add">Add to Cart</span>
                 </button>
               </div>
