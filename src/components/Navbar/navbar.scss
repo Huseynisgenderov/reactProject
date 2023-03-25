@@ -5,6 +5,192 @@
   left: 0;
   width: 100%;
   z-index: 3;
+  .login-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 999;
+    transition: all 0.5s ease-in-out;
+    transform: translateX(100vw);
+    .login-flex {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      color: #353532;
+      pointer-events: auto;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 0 solid transparent;
+      border-radius: 0;
+      outline: 0;
+      height: 100%;
+      .login-header {
+        padding: 30px 90px;
+        display: flex;
+        align-items: center;
+        .login-title {
+          font-size: 1.125rem;
+          font-weight: 300;
+          line-height: 1.22;
+        }
+        button {
+          position: absolute;
+          left: 30px;
+          right: auto;
+          outline: none;
+          border: none;
+          padding: 10px;
+          background-color: #fff;
+          font-size: 22px;
+          cursor: pointer;
+        }
+      }
+      .login-body {
+        position: relative;
+        flex: 1 1 auto;
+        .login-parent {
+          position: relative;
+          flex: 1 1 auto;
+          padding: 10px 90px 30px;
+          form {
+            padding-bottom: 20px;
+            background: #fff;
+            .row {
+              display: flex;
+              flex-wrap: wrap;
+              margin-right: 0;
+              margin-left: 0;
+              .col {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+                width: 100%;
+                label {
+                  font-size: 1rem;
+                  color: #353532;
+                }
+                input {
+                  margin-top: 5px;
+                  height: 50px;
+                  padding: 0 15px;
+                  border: solid 1px #d9dbcf;
+                  box-sizing: border-box;
+                  border-bottom: 1px solid #a6a8a0;
+                  background-color: #f2f3ee;
+                  width: 100%;
+                  text-align: left;
+                  font-family: sans-serif;
+                  font-size: 1rem;
+                  font-weight: 300;
+                  color: #353532;
+                  border-radius: 0;
+                }
+                .col-row {
+                  display: flex;
+                  flex-wrap: wrap;
+                  .col-left {
+                    position: relative;
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                    padding: 10px;
+                    input {
+                      width: 16px;
+                      height: 16px;
+                      position: absolute;
+                      top: 6px;
+                      left: 5px;
+                    }
+                    label {
+                      display: inline-block;
+                      padding-left: 28px;
+                      color: #353532;
+                      margin: 0;
+                    }
+                  }
+                  .col-right {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                    padding: 10px;
+                    text-align: right;
+                    align-self: center;
+                    a {
+                      text-decoration: underline;
+                    }
+                  }
+                }
+              }
+              .button {
+                flex: 0 0 100%;
+                max-width: 100%;
+                height: 60px;
+                line-height: 60px;
+                background: #353532;
+                text-align: center;
+                font-size: 1rem;
+                font-weight: 300;
+                color: #f2f3ee;
+                width: 100%;
+                display: inline-block;
+                border: 0;
+                cursor: pointer;
+              }
+              .or {
+                flex: 0 0 100%;
+                max-width: 100%;
+                text-align: center;
+                padding-bottom: 20px;
+                padding-top: 20px;
+              }
+            }
+          }
+          .row {
+            display: flex;
+            flex-wrap: wrap;
+            .left {
+              padding-right: 5px;
+              flex: 0 0 50%;
+              max-width: 50%;
+              a {
+                height: 60px;
+                line-height: 60px;
+                background: #353532;
+                text-align: center;
+                font-size: 1rem;
+                font-weight: 300;
+                color: #f2f3ee;
+                width: 100%;
+                display: inline-block;
+                i {
+                  font-size: 19px;
+                  margin-right: 10px;
+                }
+              }
+            }
+            .right {
+              padding-left: 5px;
+              flex: 0 0 50%;
+              max-width: 50%;
+              a {
+                height: 60px;
+                line-height: 60px;
+                background: #f2f3ee;
+                border: 1px solid #b4b4af;
+                color: #353532;
+                box-sizing: border-box;
+                text-align: center;
+                font-size: 1rem;
+                font-weight: 300;
+                width: 100%;
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   .sideMenu {
     position: fixed;
     top: 0;
@@ -13,7 +199,7 @@
     z-index: 999;
     background: #fbfbfa;
     color: #353532;
-    transition: all .6s ease-in-out;
+    transition: all 0.6s ease-in-out;
     transform: translateX(-100vw);
     .menu-top {
       position: fixed;
@@ -198,12 +384,24 @@
     transform: translateX(0);
   }
 }
+#showLogin {
+  .login-sidebar {
+    transform: translateX(0);
+  }
+}
+//Media--------------------------------------------------------------------------------------------------------
 @media (min-width: 1025px) {
   .navbar {
     padding: 30px 40px 0;
   }
   .loginTitle {
     font-weight: 400;
+  }
+  .login-sidebar {
+    width: 720px;
+    .login-header {
+      justify-content: flex-start;
+    }
   }
   .sideMenu {
     width: calc(100vw - 100px);
@@ -252,7 +450,6 @@
     }
   }
 }
-//Media
 @media (min-width: 1025px) and (max-width: 1299px) {
   .sideMenu {
     .menu-list {

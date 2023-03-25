@@ -29,6 +29,8 @@ const Navbar = () => {
 
   //for SideMenu
   const [showSideMenu, setShowSideMenu] = useState(false);
+  //for LoginMenu
+  const [showLoginMenu, setShowLoginMenu] = useState(false);
 
   //for useContext
   const { cart } = useContext(CartContext);
@@ -38,7 +40,7 @@ const Navbar = () => {
       className={`navbar ${
         scrolled ? "scrolled" : pathname !== "/" ? "black" : ""
       }`}
-      id={showSideMenu ? "show" : ""}
+      id={showSideMenu ? "show" : showLoginMenu ? "showLogin" : ""}
     >
       <div className="row">
         <div className="menuBar">
@@ -58,13 +60,64 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="right-col">
-          <Link>
+          <Link onClick={() => setShowLoginMenu(!showLoginMenu)}>
             <p className="loginTitle">Login</p>
           </Link>
           <Link className="cartInfo" to="/cart">
             <small className="number">{cart.length}</small>
             <i class="fa-solid fa-cube"></i>
           </Link>
+        </div>
+      </div>
+      <div className="login-sidebar">
+        <div className="login-flex">
+          <div className="login-header">
+            <h5 className="login-title">Login</h5>
+            <button onClick={() => setShowLoginMenu(false)}>
+              <i class="fa-sharp fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div className="login-body">
+            <div className="login-parent">
+              <form>
+                <div className="row">
+                  <div className="col">
+                    <label>Email Address</label>
+                    <input type="text" />
+                  </div>
+                  <div className="col">
+                    <label>Password</label>
+                    <input type="password" />
+                  </div>
+                  <div className="col">
+                    <div className="col-row">
+                      <div className="col-left">
+                        <input type="checkbox" />
+                        <label htmlFor="">Remember me</label>
+                      </div>
+                      <div className="col-right">
+                        <Link>Forgot password</Link>
+                      </div>
+                    </div>
+                  </div>
+                  <button className="button">Login</button>
+                  <div className="or">
+                    <span>Or</span>
+                  </div>
+                </div>
+              </form>
+              <div className="row">
+                <div className="left">
+                  <Link>
+                    <i class="fa-brands fa-facebook-f"></i>Login
+                  </Link>
+                </div>
+                <div className="right">
+                  <Link>Join Kaft</Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="sideMenu">
