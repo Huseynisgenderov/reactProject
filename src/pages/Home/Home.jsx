@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 //scss
 import "./home.scss";
@@ -72,7 +72,7 @@ const Home = () => {
       </div>
       <CategorySwiper />
       <section className="tripple">
-        <div className="card left">
+        <div className="card left-col">
           <Link>
             <div className="mini">
               Do something for someone you love, <br />

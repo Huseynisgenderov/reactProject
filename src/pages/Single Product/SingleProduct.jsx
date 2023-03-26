@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 //scss
 import "./singleProduct.scss";
 //images
@@ -34,14 +34,6 @@ const SingleProduct = () => {
     setProduct(() => data.find((product) => product.id === id));
   }, [id, data]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:5000/api/products/")
-  //     .then((res) => setData(res.data))
-  //     .catch((err) => console.log(err));
-  // }, []);
-
-  // const findData = data.find((item) => item.id == id);
 
   const handleClick = (index) => {
     setActiveIndex(index === activeIndex ? -1 : index);

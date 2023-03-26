@@ -1,16 +1,20 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 //scss
 import "./cart.scss";
+import "../../components/Navbar/navbar.scss";
 //react-router-dom
 import { Link } from "react-router-dom";
-import paltar from "../../assets/image/atlet.jpg";
 //component
 import Footer from "../../components/Footer/Footer";
+import { LoginSideBar } from "../../components/Navbar/LoginSideBar";
 
+//Context
 import { CartContext } from "../../cartContext";
 
 const Cart = () => {
   const { cart, setCart, totalPrice, setTotalPrice } = useContext(CartContext);
+  //for LoginMenu
+  const [showLoginMenu, setShowLoginMenu] = useState(false);
 
   const increment = (id) => {
     const updatedItem = cart.map((item) => {
@@ -34,17 +38,18 @@ const Cart = () => {
     setCart(updatedItem);
   };
 
-  const deleteItemFromCart = (id) =>{
-    const updatedCart = cart.filter(item => item.id !== id)
-    setCart(updatedCart)
-  }
+  const deleteItemFromCart = (id) => {
+    const updatedCart = cart.filter((item) => item.id !== id);
+    setCart(updatedCart);
+  };
 
   return (
-    <div className="cart-page">
+    <div className="cart-page" id={showLoginMenu ? "showLogin" : ""}>
       <header>
         <Link to="/" className="logo" />
         <Link to="/" className="back" />
       </header>
+      <LoginSideBar onClose={() => setShowLoginMenu(!showLoginMenu)} />
       <div className="inner-container" id="cart">
         <div className="step-progress">
           <div className="step-inner">
@@ -106,10 +111,15 @@ const Cart = () => {
                         </Link>
                       </form>
                     </div>
-                    <div className="close" onClick={()=>{
-                      deleteItemFromCart(cartItem.id)
-                      setTotalPrice(totalPrice - (cartItem.quantity * cartItem.price))
-                    }}>
+                    <div
+                      className="close"
+                      onClick={() => {
+                        deleteItemFromCart(cartItem.id);
+                        setTotalPrice(
+                          totalPrice - cartItem.quantity * cartItem.price
+                        );
+                      }}
+                    >
                       <i class="fa-solid fa-xmark"></i>
                     </div>
                     <div className="update-price">$ {cartItem.price}</div>
@@ -146,7 +156,9 @@ const Cart = () => {
                       </div>
                       <div className="sum-price">$ {totalPrice}</div>
                     </div>
-                    <button>Check Out</button>
+                    <button onClick={() => setShowLoginMenu(!showLoginMenu)}>
+                      Check Out
+                    </button>
                     <div className="or">
                       <i>- or -</i>
                     </div>

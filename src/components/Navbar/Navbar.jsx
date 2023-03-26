@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 //Scss
 import "./navbar.scss";
 //Image
@@ -8,6 +8,7 @@ import scrolledImg from "../../assets/image/kaft_logo.svg";
 import { Link, useLocation } from "react-router-dom";
 //CartContext
 import { CartContext } from "../../cartContext";
+import { LoginSideBar } from "./LoginSideBar";
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -69,57 +70,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <div className="login-sidebar">
-        <div className="login-flex">
-          <div className="login-header">
-            <h5 className="login-title">Login</h5>
-            <button onClick={() => setShowLoginMenu(false)}>
-              <i class="fa-sharp fa-solid fa-xmark"></i>
-            </button>
-          </div>
-          <div className="login-body">
-            <div className="login-parent">
-              <form>
-                <div className="row">
-                  <div className="col">
-                    <label>Email Address</label>
-                    <input type="text" />
-                  </div>
-                  <div className="col">
-                    <label>Password</label>
-                    <input type="password" />
-                  </div>
-                  <div className="col">
-                    <div className="col-row">
-                      <div className="col-left">
-                        <input type="checkbox" />
-                        <label htmlFor="">Remember me</label>
-                      </div>
-                      <div className="col-right">
-                        <Link>Forgot password</Link>
-                      </div>
-                    </div>
-                  </div>
-                  <button className="button">Login</button>
-                  <div className="or">
-                    <span>Or</span>
-                  </div>
-                </div>
-              </form>
-              <div className="row">
-                <div className="left">
-                  <Link>
-                    <i class="fa-brands fa-facebook-f"></i>Login
-                  </Link>
-                </div>
-                <div className="right">
-                  <Link>Join Kaft</Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <LoginSideBar onClose={() => setShowLoginMenu(!showLoginMenu)} />
       <div className="sideMenu">
         <div className="menu-top" onClick={() => setShowSideMenu(false)}>
           <span>X</span>
@@ -130,69 +81,69 @@ const Navbar = () => {
               <h2 className="menu-title">Shop</h2>
               <ul class="shop-list-item">
                 <li className="shop-item">
-                  <Link>Creative T-shirts</Link>
+                  <Link to="/products">Creative T-shirts</Link>
                 </li>
                 <li className="shop-item">
-                  <Link>Basic T-shirts</Link>
+                  <Link to="/products">Basic T-shirts</Link>
                 </li>
                 <li className="shop-item">
-                  <Link>Tanks</Link>
+                  <Link to="/products">Tanks</Link>
                 </li>
                 <li className="shop-item">
-                  <Link>Shorts</Link>
+                  <Link to="/products">Shorts</Link>
                 </li>
                 <li className="shop-item">
-                  <Link>Trousers</Link>
+                  <Link to="/products">Trousers</Link>
                 </li>
                 <li className="shop-item">
-                  <Link>Shorts</Link>
+                  <Link to="/products">Shorts</Link>
                 </li>
                 <li className="shop-item">
-                  <Link>Trousers</Link>
+                  <Link to="/products">Trousers</Link>
                 </li>
                 <li className="shop-item">
-                  <Link>Bags</Link>
+                  <Link to="/products">Bags</Link>
                 </li>
                 <li className="shop-item">
-                  <Link>Jacket</Link>
+                  <Link to="/products">Jacket</Link>
                 </li>
                 <li className="shop-item">
-                  <Link>Creative Hoodies</Link>
+                  <Link to="/products">Creative Hoodies</Link>
                 </li>
                 <li className="shop-item">
-                  <Link>Zip Hoodies</Link>
+                  <Link to="/products">Zip Hoodies</Link>
                 </li>
                 <li className="shop-item">
-                  <Link>Sweatshirts</Link>
+                  <Link to="/products">Sweatshirts</Link>
                 </li>
                 <li className="shop-item">
-                  <Link>Beanies</Link>
+                  <Link to="/products">Beanies</Link>
                 </li>
                 <li className="shop-item">
-                  <Link>Socks</Link>
+                  <Link to="/products">Socks</Link>
                 </li>
               </ul>
               <ul class="other-list-item">
                 <li>
-                  <Link>Fujifilm x KAFT</Link>
+                  <Link to="https://www.kaft.com/en/series/35">Fujifilm x KAFT</Link>
                 </li>
                 <li>
-                  <Link>2022 T-shirt Series</Link>
+                  <Link to="https://www.kaft.com/en/series">2022 T-shirt Series</Link>
                 </li>
                 <li>
-                  <Link>Hybrid Minds / NFT</Link>
+                  <Link to="https://www.kaft.com/en/kaft-hybrid-minds">Hybrid Minds / NFT</Link>
                 </li>
                 <li>
-                  <Link>Kaft Colors</Link>
+                  <Link to="https://www.kaft.com/en/kaft-colors">Kaft Colors</Link>
                 </li>
                 <li>
-                  <Link>Lookbook</Link>
+                  <Link to="https://www.kaft.com/en/lookbook-main">Lookbook</Link>
                 </li>
                 <li>
-                  <Link>Gift Card</Link>
+                  <Link to="https://www.kaft.com/en/gift-card">Gift Card</Link>
                 </li>
                 <li>
-                  <Link>Tee Machine</Link>
+                  <Link to="https://www.kaft.com/en/teemachine">Tee Machine</Link>
                 </li>
               </ul>
             </li>

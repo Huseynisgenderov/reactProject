@@ -18,14 +18,6 @@ import { CartContext } from "../../cartContext";
 const Product = () => {
   const { data } = useContext(CartContext);
 
-  // const [data, setData] = useState([]);
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:5000/api/products/")
-  //     .then((res) => setData(res.data))
-  //     .catch((err) => console.log(err));
-  // }, []);
-
   return (
     <div className="product-page">
       <div className="product-list">

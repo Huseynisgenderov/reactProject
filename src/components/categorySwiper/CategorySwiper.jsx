@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 //images
 import atlet from "../../assets/image/atlet.jpg";
