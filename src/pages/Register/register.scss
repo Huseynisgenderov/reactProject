@@ -24,8 +24,165 @@
       }
     }
   }
+  .register-main {
+    display: flex;
+    .signup {
+      flex: 0 0 100%;
+      max-width: 100%;
+      form {
+        .error {
+          color: red;
+        }
+        .error-border {
+          border-bottom: 1px solid red !important;
+        }
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          .col {
+            flex: 0 0 100%;
+            max-width: 100%;
+            .login-link {
+              margin-top: 25px;
+              display: flex;
+              align-items: center;
+              span {
+                flex: auto;
+                padding-right: 15px;
+              }
+              button {
+                max-width: 110px;
+                background: #f2f3ee;
+                border: 1px solid #b4b4af;
+                color: #353532;
+                box-sizing: border-box;
+                height: 50px;
+                line-height: 50px;
+                width: 100%;
+                font-size: 1rem;
+                font-weight: 300;
+                cursor: pointer;
+              }
+            }
+            .submit {
+              cursor: pointer;
+              transition: all 0.222s linear 0s;
+              border: 0;
+              height: 50px;
+              line-height: 50px;
+              background: #353532;
+              text-align: center;
+              font-size: 1rem;
+              font-weight: 300;
+              color: #f2f3ee;
+              width: 100%;
+              display: inline-block;
+            }
+            a {
+              text-decoration: underline;
+            }
+            h1 {
+              font-size: 1.125rem;
+              margin-bottom: 30px;
+              text-align: center;
+            }
+            label {
+              margin-bottom: 5px;
+              font-size: 1rem;
+              color: #353532;
+              display: inline-block;
+            }
+            .text-input {
+              height: 50px;
+              padding: 0 15px;
+              border: solid 1px #d9dbcf;
+              box-sizing: border-box;
+              border-bottom: 1px solid #a6a8a0;
+              background-color: #f2f3ee;
+              width: 100%;
+              text-align: left;
+              font-family: sans-serif;
+              font-size: 1rem;
+              font-weight: 300;
+              color: #353532;
+              border-radius: 0;
+              outline: 0;
+            }
+            .input-holder {
+              padding: 10px;
+              position: relative;
+              .checkbox {
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                z-index: 2;
+                top: 12px;
+                left: 9px;
+              }
+              label {
+                display: inline-block;
+                padding-left: 28px;
+                color: #353532;
+                a {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+          .mb-20 {
+            margin-bottom: 20px;
+          }
+          .py-10 {
+            padding-bottom: 10px;
+            padding-top: 10px;
+          }
+          .fontsize {
+            font-size: 0.875rem;
+            font-weight: 300;
+          }
+        }
+      }
+      .info-holder {
+        &::before{
+          background-position: 0 -300px;
+          width: 120px;
+          height: 138px;
+          content: "";
+          background-image: url(../../assets/image/kaft_logo.svg);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
+          transform: scale(0.5);
+          display: block;
+          margin: 50px auto;
+          transform-origin: unset!important;
+        }
+        .info-list {
+          .text-center {
+            text-align: center;
+            font-size: 1.625rem;
+            font-family: "Rumeur", "arial", "sans-serif";
+            margin-bottom: 30px;
+            font-weight: 300;
+          }
+          .item {
+            position: relative;
+            padding-left: 50px;
+            .icon{
+              position: absolute;
+              top: 5px;
+              left: 5px;
+              font-size: 23px;
+            }
+          }
+          .mb-20 {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
 }
-
 
 //media---------------------------------------------------------------------------------------------------------------------------------
 
@@ -35,5 +192,41 @@
     h1 {
       font-size: 5rem;
     }
+  }
+  .signup {
+    background: #fff;
+    padding: 0;
+    margin: 50px auto 300px;
+    max-width: 1220px !important;
+    display: flex;
+    .form-holder {
+      padding: 40px 90px 120px;
+      width: 100%;
+      max-width: 720px;
+      border-right: 1px solid #f2f3ee;
+      .row {
+        .col {
+          h1 {
+            text-align: left !important;
+          }
+          .login-link {
+            margin-top: 30px !important;
+            span {
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+    .info-holder {
+      width: 500px;
+      padding: 90px 65px;
+    }
+  }
+}
+@media (max-width: 1025px) {
+  .signup {
+    padding: 25px 20px 50px;
+    background: #fff;
   }
 }
