@@ -8,6 +8,7 @@ import hero2 from "../../assets/image/hero2.webp";
 import hero3 from "../../assets/image/hero3.webp";
 //component
 import CategorySwiper from "../../components/categorySwiper/CategorySwiper";
+import Collection from "../../components/Collection/Collection";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -100,6 +101,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
+      <Collection/>
     </div>
   );
 };

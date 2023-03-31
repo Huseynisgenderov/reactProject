@@ -1,0 +1,118 @@
+.collection-section {
+  margin-top: 80px;
+  .collection-title {
+    font-weight: 300;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 1.375rem;
+  }
+  .swiper {
+    position: relative;
+    .swiper-wrapper {
+      padding: 0 15px;
+      .swiper-slide {
+        height: 100%;
+        position: relative;
+        .product {
+          width: 100% !important;
+          height: 100%;
+          padding: 0 0 55px;
+          position: relative;
+          display: inline-block;
+          max-width: 800px;
+          text-align: center;
+          a {
+            display: block;
+            width: 100%;
+            height: 90%;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .product-bottom {
+            .bottom-info {
+              width: 100%;
+              text-align: center;
+              .old-price {
+                text-decoration: line-through;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      position: absolute;
+      top: calc(50% - 25px);
+      width: 50px;
+      height: 50px;
+      background: #d9dbcf;
+      border-radius: 50%;
+      z-index: 10;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: 0;
+      border: 0;
+      &::after {
+        padding: 12px;
+        font-size: 18px;
+        display: inline-block;
+        color: #353532;
+      }
+    }
+  }
+}
+
+// media -------------------------------------------------------
+@media (min-width: 1025px) {
+  .collection-section {
+    .collection-title {
+      display: block;
+      margin-bottom: 110px !important;
+    }
+    .swiper {
+      height: 600.15px !important;
+      .swiper-slide {
+        width: 456px !important;
+      }
+    }
+    a {
+      color: #00d8c1;
+    }
+    .bottom-title,
+    .bottom-price {
+      margin-bottom: 5px;
+    }
+    .product-bottom {
+      padding: 15px 12px 0;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+    }
+  }
+}
+@media (max-width: 1025px) {
+  .swiper {
+    height: 368px;
+  }
+  .product {
+    width: 25%;
+    padding: 20px 10px;
+  }
+  .bottom-info {
+    padding: 0 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .bottom-title,
+  .bottom-price {
+    font-size: 0.8rem !important;
+    margin-bottom: 10px !important;
+  }
+}

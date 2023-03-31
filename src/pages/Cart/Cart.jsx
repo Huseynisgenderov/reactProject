@@ -11,6 +11,10 @@ import { LoginSideBar } from "../../components/Navbar/LoginSideBar";
 //Context
 import { CartContext } from "../../cartContext";
 
+//swal
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
+
 const Cart = () => {
   const { cart, setCart, totalPrice, setTotalPrice } = useContext(CartContext);
   //for LoginMenu
@@ -41,6 +45,23 @@ const Cart = () => {
   const deleteItemFromCart = (id) => {
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 1000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+      },
+    });
+
+    Toast.fire({
+      icon: "error",
+      title: "Remove from the card",
+    });
   };
 
   return (

@@ -16,9 +16,10 @@ import detailImg from "../../assets/image/tisort_detail.jpg";
 import { Link, useParams } from "react-router-dom";
 //local-data
 import { sizeData } from "./sizes";
-
+//context
 import { CartContext } from "../../cartContext";
-// import axios from "axios";
+//component
+import Collection from "../../components/Collection/Collection";
 
 const SingleProduct = () => {
   const [showInch, setShowInch] = useState(false);
@@ -39,6 +40,7 @@ const SingleProduct = () => {
     setActiveIndex(index === activeIndex ? -1 : index);
     setSelectedSize(sizeData[index].sizeName);
   };
+
 
   return (
     <div className="singleProduct-page">
@@ -382,6 +384,7 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
+      <Collection/>
     </div>
   );
 };

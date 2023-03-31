@@ -70,13 +70,13 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <LoginSideBar onClose={() => setShowLoginMenu(!showLoginMenu)} />
+      <LoginSideBar onClose={() => setShowLoginMenu(!showLoginMenu)}/>
       <div className="sideMenu">
         <div className="menu-top" onClick={() => setShowSideMenu(false)}>
           <span>X</span>
         </div>
         <div className="menu-inner">
-          <ul className="menu-list">
+          <ul className="menu-list" onClick={() => setShowSideMenu(false)}>
             <li className="menu-item">
               <h2 className="menu-title">Shop</h2>
               <ul class="shop-list-item">
@@ -125,25 +125,37 @@ const Navbar = () => {
               </ul>
               <ul class="other-list-item">
                 <li>
-                  <Link to="https://www.kaft.com/en/series/35">Fujifilm x KAFT</Link>
+                  <Link to="https://www.kaft.com/en/series/35">
+                    Fujifilm x KAFT
+                  </Link>
                 </li>
                 <li>
-                  <Link to="https://www.kaft.com/en/series">2022 T-shirt Series</Link>
+                  <Link to="https://www.kaft.com/en/series">
+                    2022 T-shirt Series
+                  </Link>
                 </li>
                 <li>
-                  <Link to="https://www.kaft.com/en/kaft-hybrid-minds">Hybrid Minds / NFT</Link>
+                  <Link to="https://www.kaft.com/en/kaft-hybrid-minds">
+                    Hybrid Minds / NFT
+                  </Link>
                 </li>
                 <li>
-                  <Link to="https://www.kaft.com/en/kaft-colors">Kaft Colors</Link>
+                  <Link to="https://www.kaft.com/en/kaft-colors">
+                    Kaft Colors
+                  </Link>
                 </li>
                 <li>
-                  <Link to="https://www.kaft.com/en/lookbook-main">Lookbook</Link>
+                  <Link to="https://www.kaft.com/en/lookbook-main">
+                    Lookbook
+                  </Link>
                 </li>
                 <li>
                   <Link to="https://www.kaft.com/en/gift-card">Gift Card</Link>
                 </li>
                 <li>
-                  <Link to="https://www.kaft.com/en/teemachine">Tee Machine</Link>
+                  <Link to="https://www.kaft.com/en/teemachine">
+                    Tee Machine
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -200,6 +212,9 @@ const Navbar = () => {
               </ul>
             </li>
           </ul>
+        </div>
+        <div className="menu-bottom">
+          <Link to="/register" onClick={() => setShowSideMenu(false)}>Register/Login</Link>
         </div>
       </div>
     </div>

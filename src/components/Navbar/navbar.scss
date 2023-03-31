@@ -196,13 +196,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 3;
+  z-index: 5;
   .sideMenu {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    z-index: 999;
+    z-index: 99;
     background: #fbfbfa;
     color: #353532;
     transition: all 0.6s ease-in-out;
@@ -279,6 +279,29 @@
         .kaft-world {
           background-color: #edc50a;
         }
+      }
+    }
+    .menu-bottom {
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 75px;
+      background: #f2f3ee;
+      padding: 10px 30px;
+      border-top: 1px solid #d9dbcf;
+      a {
+        max-width: 180px;
+        border: 0;
+        height: 50px;
+        line-height: 50px;
+        background: #353532;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 300;
+        color: #f2f3ee;
+        width: 100%;
+        display: inline-block;
       }
     }
   }
@@ -386,17 +409,40 @@
   }
 }
 #show {
+  &::after {
+    content: "";
+    background-color: #0d0c106a;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
   .sideMenu {
     transform: translateX(0);
   }
 }
 #showLogin {
+  &::after {
+    content: "";
+    background-color: #0d0c106a;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
   .login-sidebar {
     transform: translateX(0);
   }
 }
 //Media--------------------------------------------------------------------------------------------------------
 @media (min-width: 1025px) {
+  .menu-bottom {
+    display: none !important;
+  }
   .navbar {
     padding: 30px 40px 0;
   }
@@ -410,6 +456,7 @@
     }
   }
   .sideMenu {
+    z-index: 3;
     width: calc(100vw - 100px);
     max-width: 2000px;
     .menu-top {
@@ -489,11 +536,13 @@
     background-color: transparent !important;
   }
   .sideMenu {
-    overflow-y: scroll;
     position: fixed;
     width: calc(100vw - 50px);
     min-width: 300px;
     max-width: 350px;
+    .menu-inner {
+      overflow-y: scroll;
+    }
     .menu-top {
       position: absolute;
       top: 0;

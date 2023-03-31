@@ -1,9 +1,15 @@
 import { useState } from "react";
+//react-router-dom
 import { Link } from "react-router-dom";
-
+//scss
 import "./register.scss";
+//component
+import { LoginSideBar } from "../../components/Navbar/LoginSideBar";
 
 const Register = () => {
+  //for LoginMenu
+  const [showLoginMenu, setShowLoginMenu] = useState(false);
+  //register
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -77,7 +83,8 @@ const Register = () => {
   }
 
   return (
-    <div>
+    <div id={showLoginMenu ? "showLogin" : ""}>
+      <LoginSideBar onClose={() => setShowLoginMenu(!showLoginMenu)} />
       <div className="container-fluid-register">
         <div className="px-10">
           <div className="text-center">
@@ -96,6 +103,7 @@ const Register = () => {
                     <label>First Name</label>
                     <input
                       type="text"
+                      id="name"
                       className={
                         errors.name ? "error-border text-input" : "text-input"
                       }
@@ -107,6 +115,7 @@ const Register = () => {
                     <label>Last Name</label>
                     <input
                       type="text"
+                      id="lastName"
                       className={
                         errors.lastname
                           ? "error-border text-input"
@@ -120,6 +129,7 @@ const Register = () => {
                     <label>Email Address</label>
                     <input
                       type="text"
+                      id="email"
                       className={
                         errors.email ? "error-border text-input" : "text-input"
                       }
@@ -131,6 +141,7 @@ const Register = () => {
                     <label>Password</label>
                     <input
                       type="password"
+                      id="password"
                       className={
                         errors.password
                           ? "error-border text-input"
@@ -144,6 +155,7 @@ const Register = () => {
                     <label> Re-type password</label>
                     <input
                       type="password"
+                      id="rePassword"
                       className={
                         errors.retypepassword
                           ? "error-border text-input"
@@ -196,7 +208,9 @@ const Register = () => {
                   <div className="col">
                     <div className="login-link">
                       <span>I signed up before</span>
-                      <button>Login</button>
+                      <button onClick={() => setShowLoginMenu(!showLoginMenu)}>
+                        Login
+                      </button>
                     </div>
                   </div>
                 </div>

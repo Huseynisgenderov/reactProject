@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const LoginSideBar = ({ onClose }) => {
@@ -90,7 +90,7 @@ export const LoginSideBar = ({ onClose }) => {
                 </Link>
               </div>
               <div className="right">
-                <Link to="/register">Join Kaft</Link>
+                <Link to="/register" onClick={onClose}>Join Kaft</Link>
               </div>
             </div>
           </div>

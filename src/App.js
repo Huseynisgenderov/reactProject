@@ -10,6 +10,7 @@ import Register from "./pages/Register/Register";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import Cart from "./pages/Cart/Cart";
+import { ScrollToTop } from "./components/AutoScroll/ScrollToTop";
 //useContext
 import { CartProvider } from "./cartContext";
 
@@ -19,13 +20,14 @@ const App = () => {
   return (
     <>
       <CartProvider>
+        <ScrollToTop />
         {pathname !== "/cart" && <Navbar />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Product />} />
           <Route path="/products/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/register" element={<Register/>} />
+          <Route path="/register" element={<Register />} />
           {/* For hiding navbar on 404 page */}
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/404" replace />} />

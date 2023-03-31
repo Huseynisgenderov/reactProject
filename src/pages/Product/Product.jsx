@@ -13,7 +13,6 @@ import CategorySwiper from "../../components/categorySwiper/CategorySwiper";
 //useContext
 import { CartContext } from "../../cartContext";
 
-// import axios from "axios";
 
 const Product = () => {
   const { data } = useContext(CartContext);
