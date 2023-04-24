@@ -29,7 +29,7 @@ const SingleProduct = () => {
     useContext(CartContext);
   const [product, setProduct] = useState(null);
   // const [data, setData] = useState([null]);
-  const { id } = useParams();
+  const { id } = useParams(); 
 
   useEffect(() => {
     setProduct(() => data.find((product) => product.id === id));
@@ -96,6 +96,15 @@ const SingleProduct = () => {
                 <div className="product-color-swipper">
                   <div className="swiper-wrapper">
                     <div className="color">
+                      <div className="color_in"></div>
+                    </div>
+                    <div className="color second">
+                      <div className="color_in"></div>
+                    </div>
+                    <div className="color third">
+                      <div className="color_in"></div>
+                    </div>
+                    <div className="color fourth">
                       <div className="color_in"></div>
                     </div>
                   </div>

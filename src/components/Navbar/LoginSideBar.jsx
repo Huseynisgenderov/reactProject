@@ -9,20 +9,18 @@ export const LoginSideBar = ({ onClose }) => {
   function handleSubmit(e) {
     e.preventDefault();
     clearMessages();
-    let errorFlag = false;
 
     if (!emailIsValid(email)) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         email: "Invalid email address",
       }));
-      errorFlag = true;
     }
-    if(password === ""){
-        setErrors((prevErrors) => ({
-            ...prevErrors,
-            password: "Empty password",
-          }));
+    if (password === "") {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        password: "Empty password",
+      }));
     }
   }
 
@@ -90,7 +88,9 @@ export const LoginSideBar = ({ onClose }) => {
                 </Link>
               </div>
               <div className="right">
-                <Link to="/register" onClick={onClose}>Join Kaft</Link>
+                <Link to="/register" onClick={onClose}>
+                  Join Kaft
+                </Link>
               </div>
             </div>
           </div>
