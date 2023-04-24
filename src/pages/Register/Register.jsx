@@ -26,21 +26,18 @@ const Register = () => {
   function handleSubmit(e) {
     e.preventDefault();
     clearMessages();
-    let errorFlag = false;
 
     if (name.length < 1) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         name: "Name cannot be blank",
       }));
-      errorFlag = true;
     }
     if (lastName.length < 1) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         lastname: "Last Name cannot be blank",
       }));
-      errorFlag = true;
     }
 
     if (!emailIsValid(email)) {
@@ -48,7 +45,6 @@ const Register = () => {
         ...prevErrors,
         email: "Invalid email address",
       }));
-      errorFlag = true;
     }
 
     if (password.length < 1) {
@@ -56,14 +52,12 @@ const Register = () => {
         ...prevErrors,
         password: "Please enter password",
       }));
-      errorFlag = true;
     }
     if (reTypePassword.length < 1) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         retypepassword: "Please enter password again",
       }));
-      errorFlag = true;
     }
   }
 
